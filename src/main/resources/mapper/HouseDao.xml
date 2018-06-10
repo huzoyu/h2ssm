@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huzhongyu.dao.HouseDao">
+    <insert id="userAddHouse" >
+        insert into house(user_id,name,city,community,room,area,type)
+        values(#{userId},#{name},#{city},#{community},#{room},#{area},#{type})
+    </insert>
+
+    <select id="queryById" resultType="House">
+        select id,user_id,name,city,community,room,area,type,state
+        from house
+        where id=#{id}
+    </select>
+
+    <update id="updateHouse">
+        update house
+        set name=#{name},
+        city=#{city},
+        community=#{community},
+        room=#{room},
+        area=#{area},
+        type=#{type}
+        where id=#{id}
+    </update>
+    
+    <select id="userQueryAll" resultType="House">
+        select id,user_id,name,city,community,room,area,type,state
+        from house
+        where user_id=#{userId}
+        order by id
+        limit #{offset},#{limit}
+    </select>
+
+    <select id="userQueryOccupancy" resultType="House">
+        select id,user_id,name,city,community,room,area,type,state
+        from house
+        where user_id=#{userId}
+        and state=1
+        order by id
+        limit #{offset},#{limit}
+    </select>
+
+    <select id="userQueryVacant" resultType="House">
+        select id,user_id,name,city,community,room,area,type,state
+        from house
+        where user_id=#{userId}
+        and state=0
+        order by id
+        limit #{offset},#{limit}
+    </select>
+
+    <select id="userQueryCountOccupancy" resultType="int">
+        select count(id)
+        from house
+        where user_id=#{userId}
+        and state=1
+    </select>
+
+    <select id="userQueryCountAll" resultType="int">
+        select count(id)
+        from house
+        where user_id=#{userId}
+    </select>
+
+    <update id="checkIn">
+        update house
+        set state=1
+        where id=#{id}
+    </update>
+
+    <update id="checkOut">
+        update house
+        set state=0
+        where id=#{id}
+    </update>
+
+    <delete id="userDeleteById">
+        delete from house
+        where id=#{id}
+    </delete>
+
+    <select id="queryByCity" resultType="House">
+        select id,user_id,name,city,community,room,area,type,state
+        from house
+        where city=#{city}
+        order by id
+    </select>
+
+    <select id="queryByCommunity" resultType="House">
+        select id,user_id,name,city,community,room,area,type,state
+        from house
+        where community=#{community}
+        order by id
+    </select>
+
+    <select id="queryByUid" resultType="House">
+        select id,user_id,name,city,community,room,area,type,state
+        from house
+        where user_id=#{uid}
+        order by id
+    </select>
+
+</mapper>

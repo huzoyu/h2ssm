@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huzhongyu.dao.AgreementDao">
+
+    <insert id="addAgreement">
+        insert into agreement(house_id,tenant_name,tenant_phone,
+        start_date,period,deposit,rent)
+        values(#{houseId},#{tenantName},#{tenantPhone},
+        #{startDate},#{period},#{deposit},#{rent})
+    </insert>
+
+    <update id="updateAgreement">
+        update agreement
+        set tenant_name=#{tenantName},
+        tenant_phone=#{tenantPhone},
+        start_date=#{startDate},
+        period=#{period},
+        deposit=#{deposit},
+        rent=#{rent}
+        where id=#{id}
+    </update>
+
+    <select id="queryAgreementById" resultType="Agreement">
+        select *
+        from agreement
+        where id=#{id}
+    </select>
+
+    <delete id="deleteById">
+        delete from agreement
+        where id=#{id}
+    </delete>
+
+    <delete id="deleteByHouseId">
+        delete from agreement
+        where house_id=#{houseId}
+    </delete>
+
+    <select id="queryListByHouseId" resultType="Agreement">
+        select *
+        from agreement
+        where house_id=#{houseId}
+        order by id
+        limit #{offset},#{limit}
+    </select>
+
+</mapper>
