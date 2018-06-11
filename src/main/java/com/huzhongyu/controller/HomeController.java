@@ -1,7 +1,6 @@
 package com.huzhongyu.controller;
 
 
-import com.huzhongyu.entity.Rate;
 import com.huzhongyu.entity.User;
 import com.huzhongyu.service.HouseService;
 import com.huzhongyu.service.UserService;

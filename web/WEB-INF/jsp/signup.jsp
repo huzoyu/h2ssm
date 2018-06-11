@@ -47,10 +47,23 @@
 <%--
 用户表单：<a href="<%=appPath%>/user/list" class="btn btn-primary btn-lg active" role="button">点击前往</a>
 --%>
+
 <script src="${appPath}/static/js/jquery-3.3.1.min.js"></script>
 <script src="${appPath}/static/bootstrap-3.3.7-dist/css/bootstrap.min.css"></script>
 
 
 
 </body>
+<script>
+    //对应后台返回的提示
+    if ('${result}' != '') {
+        if ('${result}' == 0) {
+            alert('注册成功，将跳转到登录页面！')
+            location.href = '/login/login'
+        }
+        if ('${result}' == 1) {
+            alert('该账号已有人注册！')
+        }
+    }
+</script>
 </html>

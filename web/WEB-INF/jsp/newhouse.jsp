@@ -18,68 +18,77 @@
 
     <title>添加房源</title>
 </head>
-<body>
+<body >
 <jsp:include page="navbar.jsp"></jsp:include>
 
-<div class="row clearfix">
-    <div class="col-md-12 column">
-        <div class="page-header">
-            <h1>添加房源信息</h1>
+
+<div align="center">
+
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <div class="page-header">
+                <h1>添加房源信息</h1>
+            </div>
         </div>
     </div>
+
+    <div class="container">
+        <form class="form-horizontal" method="post" action="/house/addhouse">
+            <div class="form-group">
+                <label for="inputName" class="col-sm-2 control-label">房源名称</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="inputName" name="name" placeholder="房源名称">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputCity" class="col-sm-2 control-label">所在城市</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="inputCity" name="city" placeholder="所在城市，如“北京”、“成都”。">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputCommunity" class="col-sm-2 control-label">所在小区</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="inputCommunity" name="community" placeholder="所在小区，如“安翔南里”。">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputRoom" class="col-sm-2 control-label">单位楼室</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="inputRoom" name="room" placeholder="单位楼室，如“1单元101室”。">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputArea" class="col-sm-2 control-label">居住面积</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="inputArea" name="area" placeholder="居住面积，单位平方米。">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputType" class="col-sm-2 control-label">房源类型</label>
+                <div class="col-sm-6">
+                    <select class="form-control" id="inputType" name="type">
+                        <option>单间</option>
+                        <option>一室一厅</option>
+                        <option>两室一厅</option>
+                        <option>三室一厅</option>
+                        <option>三室两厅</option>
+                        <option>四室两厅</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default">确认添加</button>
+                    <a href="/home/rate" role="button" class="btn btn-primary">返回首页</a>
+                </div>
+            </div>
+        </form>
+    </div>
+
 </div>
 
-<form class="form-horizontal" method="post" action="/house/addhouse">
-    <div class="form-group">
-        <label for="inputName" class="col-sm-2 control-label">房源名称</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" id="inputName" name="name" placeholder="房源名称">
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="inputCity" class="col-sm-2 control-label">所在城市</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" id="inputCity" name="city" placeholder="所在城市，如“北京”、“成都”。">
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="inputCommunity" class="col-sm-2 control-label">所在小区</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" id="inputCommunity" name="community" placeholder="所在小区，如“安翔南里”。">
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="inputRoom" class="col-sm-2 control-label">单位楼室</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" id="inputRoom" name="room" placeholder="单位楼室，如“1单元101室”。">
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="inputArea" class="col-sm-2 control-label">居住面积</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" id="inputArea" name="area" placeholder="居住面积，单位平方米。">
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="inputType" class="col-sm-2 control-label">房源类型</label>
-        <div class="col-sm-10">
-            <select class="form-control" id="inputType" name="type">
-                <option>单间</option>
-                <option>一室一厅</option>
-                <option>两室一厅</option>
-                <option>三室一厅</option>
-                <option>三室两厅</option>
-                <option>四室两厅</option>
-            </select>
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-default">确认添加</button>
-            <a href="/home/rate" role="button" class="btn btn-primary">返回首页</a>
-        </div>
-    </div>
-</form>
+
 
 </body>
 </html>

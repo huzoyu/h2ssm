@@ -47,7 +47,7 @@
 <jsp:include page="navbar.jsp"></jsp:include>
 
 <%-- 内容 --%>
-<div id="main" style="width: 600px;height:400px;"></div>
+<div id="main" style="width: 600px;height:400px;margin:0 auto;"></div>
 <script type="text/javascript">
     // 基于准备好的dom，初始化echarts实例
     var myChart = echarts.init(document.getElementById('main'));

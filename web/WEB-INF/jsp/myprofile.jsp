@@ -39,13 +39,13 @@
             </div>
         </div>
         <div class="form-group">
-            <label for="inputName" class="col-sm-2 control-label">密码</label>
+            <label for="inputName" class="col-sm-2 control-label">用户名</label>
             <div class="col-sm-10">
                 <input type="text" class="form-control" id="inputName" name="name" placeholder="${user.name}" disabled="true">
             </div>
         </div>
         <div class="form-group">
-            <label for="inputPassword" class="col-sm-2 control-label">用户名</label>
+            <label for="inputPassword" class="col-sm-2 control-label">密码</label>
             <div class="col-sm-10">
                 <input type="password" class="form-control" id="inputPassword" name="password" placeholder="${user.password}" >
             </div>
@@ -61,6 +61,14 @@
 
 </div>
 
-
 </body>
+<script>
+    //对应后台返回的提示
+    if ('${result}' != '') {
+        if ('${result}' == 1) {
+            alert('修改密码成功，请重新登录！')
+            location.href = '/login/outlogin'
+        }
+    }
+</script>
 </html>

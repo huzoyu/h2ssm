@@ -6,6 +6,7 @@ import com.huzhongyu.service.LoginService;
 import com.huzhongyu.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -59,17 +60,18 @@ public class LoginController {
     }
 
     @RequestMapping("/btnsignup")
-    @ResponseBody
-    public String btnsignup(HttpServletRequest request,HttpSession session){
+    public String btnsignup(HttpServletRequest request,HttpSession session,Model model){
 
         int flag = loginService.ifExist(request.getParameter("name"));
         if(flag==1){
-            return "用户名已存在！";
+            model.addAttribute("result",1);
+
         }else{
             userService.addUser(request.getParameter("name"),request.getParameter("password"));
-            return "用户已创建，请返回登录。";
-        }
+            model.addAttribute("result",0);
 
+        }
+        return "signup";
     }
 
     @RequestMapping("/outlogin")

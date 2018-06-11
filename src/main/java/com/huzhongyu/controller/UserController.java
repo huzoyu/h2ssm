@@ -30,10 +30,10 @@ public class UserController {
     }
 
     @RequestMapping(value = "/updateuser",method = RequestMethod.POST)
-    @ResponseBody
-    public String updateuser(HttpSession session, HttpServletRequest request){
-        userService.updateUser((String)session.getAttribute("userId"),request.getParameter("password"));
-        return "修改成功。";
+    public String updateuser(HttpSession session, HttpServletRequest request,Model model){
+        userService.updateUser(session.getAttribute("userid").toString(),request.getParameter("password"));
+        model.addAttribute("result",1);
+        return "myprofile";
     }
 
     @RequestMapping(value = "/myprofile")
