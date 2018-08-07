@@ -18,3 +18,14 @@
 不过还有个更实用的项目在设计中，重制优先级有点低。
 最后要感谢GitHub的前辈们，开发过程中一直看文档写demo，对项目的结构设计摇摆不定，浪费了大量时间，最后想起了GitHub，于是阅尽大佬们的作品，
 参考了项目结构，与部分功能的实现，通宵两个多星期得以完成，参考的项目均已star，再次感谢。
+## 图图图
+### 登录
+![登录](https://github.com/huzoyu/h2ssm/blob/master/%E7%99%BB%E5%BD%95.JPG)
+### 主页
+![主页](https://github.com/huzoyu/h2ssm/blob/master/%E4%B8%BB%E9%A1%B5.JPG)
+### 待租列表
+![待租列表](https://github.com/huzoyu/h2ssm/blob/master/%E5%BE%85%E7%A7%9F%E5%88%97%E8%A1%A8.JPG)
+### 合同信息
+![合同信息](https://github.com/huzoyu/h2ssm/blob/master/%E5%90%88%E5%90%8C%E4%BF%A1%E6%81%AF.JPG)
+### 趋势图
+![趋势图](https://github.com/huzoyu/h2ssm/blob/master/%E8%B6%8B%E5%8A%BF%E5%9B%BE.JPG)
